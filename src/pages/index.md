@@ -1,358 +1,132 @@
 ---
-title: Home - Creative Cloud
-description: This is the home page of Creative Cloud 
+title: Creative Cloud - Adobe Stock
+description: This is the home page of Adobe Stock APIs 
 ---
- 
-<Hero slots="image, heading, icon, text, buttons" variant="halfwidth" />
+
+<Hero slots="image, heading, text, buttons" variant="halfwidth" />
 
 ![Creative Cloud banner](images/cc-hero.png)
 
-# Creativity for all
+# Build a better business with Adobe Stock.
 
-![Creative Cloud icon](images/cc-icon.png)
+Give your users access to stunning Adobe Stock high-quality images, graphics, and videos to use in their ads, email templates, and websites. It’s a great way to increase customer satisfaction and generate additional revenue—and it’s easy to implement. <br /><br /> Interested in partnering with Adobe Stock, or want to learn more about our plans and pricing options? Contact us, and please include [Adobe I/O] in the subject line.
 
-Creative Cloud services include tools and capabilities to streamline your workflows so that you, your team, and your stakeholders stay perfectly in sync across projects of any size 
+* [Start building today](https://console.adobe.io/downloads/lr)
 
-* [Get started](https://adobe.io)
-* [Sign up for the newsletter](https://adobe.io)
 
 
+<TextBlock slots="image, heading, text" width="33%" theme="light" isCentered />
 
+![Stock Feature](images/stock-feature1.jpg)
 
-<AnnouncementBlock slots="heading, text, button" />
+### Print on demand
 
-### Try out the magic of Photoshop
+Let users customize print projects with Adobe Stock assets to create brochures, business cards, posters, postcards, wall decals, and more.
 
-Pull together Photoshop, Lightroom and Adobe Sensei into one place. Reduce time spent in each app, freeing you up for more creative time.
+<TextBlock slots="image, heading, text" width="33%" theme="light" isCentered />
 
-[Demo](https://www.adobe.io/apis/creativecloud/photo-imaging-api/api-demo.html)
+![Stock Feature](images/stock-feature2.jpg)
 
+### Marketing Platforms
 
+Integrate Adobe Stock content into workflows for your websites and ad builders, and for your email, content marketing, and social media platforms.
 
+<TextBlock slots="image, heading, text" width="33%" theme="light" isCentered />
 
-<TextBlock slots="image, heading, text1, text2, links" />
+![Stock Feature](images/stock-feature3.jpg)
 
-![Screenshot 1](images/intro1.png)
+### DAMs
 
-### Extend Adobe CC Flagship Apps
+Create a full end-to-end experience with Adobe Stock and your Digital Asset Management platform.
 
-Extend Creative Cloud desktop apps like [Photoshop](https://www.adobe.com/products/photoshop.html), [Premiere Pro](https://www.adobe.com/products/premiere.html), and [InDesign](https://www.adobe.com/products/indesign.html) through our APIs and SDKs. 
-Be sure to check out [Common Extensibility Platform (CEP)](https://www.adobe.io/apis/creativecloud/cep.html), which lets you build custom UI panels for multiple CC apps at once.
+<TextBlock slots="image, heading, text" width="50%" theme="light" isCentered />
 
-When you're ready to ship, distribute your work on [Adobe Exchange](https://exchange.adobe.com/), the preferred marketplace for Adobe Creative Cloud users. 
-And be sure to join the [Exchange Program for Creative Cloud](https://partners.adobe.com/exchangeprogram/creativecloud) to unlock more benefits, including streamlined publishing and promotional opportunities.
+![Stock Feature](images/stock-feature4.jpg)
 
-* ![Adobe Premiere Pro](images/pr-icon.png) [Adobe Premiere Pro](https://www.adobe.com/products/premiere.html)
-* ![Adobe InDesign](images/ai-icon.png) [Adobe InDesign](https://www.adobe.com/products/indesign.html)
-* ![Adobe After Effect](images/ae-icon.png) [Adobe After Effect](https://www.adobe.com/products/aftereffects.html)   
+### Enterprise
 
+Use the Adobe Stock API to make it easy for your team to find stock assets, access a shared license history, and enforce quotas between departments.
 
+<TextBlock slots="image, heading, text" width="50%" theme="light" isCentered />
 
+![Stock Feature](images/stock-feature5.jpg)
 
-<TextBlock slots="heading, text, buttons, links, image"/>
+### Affiliates
 
-### Start Building Adobe XD Plugins
+Earn referral fees for including the search API or banners on your site.
 
-Create plugins for Adobe XD that push the boundaries of experience design by adding new features to the app, automating workflows, connecting XD to external services, and more—all on a quick, modern JavaScript engine with native UI components. 
-When you’re ready, you can ship your plugin to XD users right from within the app.
 
-* [Get started](https://adobe.io)
-* [Sign up for the newsletter](https://adobe.io)
+<TextBlock slots="image, heading, text" width="25%" theme="dark" isCentered />
 
-- [No Icon Product](https://www.adobe.com/products/premiere.html)
+![Microsoft](images/msfteams.png    )
 
-![Screenshot 2](images/intro2.png)
+### Microsoft
 
+Search and license Adobe Stock images right inside Microsoft PowerPoint and Microsoft Teams, thanks to a strategic partnership between Adobe and Microsoft.
 
 
+<TextBlock slots="image, heading, text" width="25%" theme="dark" isCentered />
 
-<TitleBlock slots="heading, text" theme="light" />
 
-### Collaborate better with Content Cloud APIs
+![Resource 1](images/google-logo.png)
 
-With the Cloud Content APIs, you can bring design work created in XD directly to your product or service.
+### Google
 
+Add more polish to presentations with the Adobe Stock add-on for Google Slides. Find images by keywords or visual search and browse curated collections.
 
+<TextBlock slots="image, heading, text" width="25%" theme="dark" isCentered />
 
+![Resource 1](images/stock-teaser3.jpg)
 
-<TextBlock slots="image, heading, text, links" width="33%" theme="light" isCentered />
+### Hootsuite
 
-![MSFT Teams logo](images/msfteams.png)
+Get access to Adobe Stock inside Hootsuite, the most widely used social media management Platform, and publish content instantly to your channels.
 
-### Microsoft teams
 
-Easily share Creative Cloud assets and files, and get comment notifications on your prototypes.
+<TextBlock slots="image, heading, text" width="25%" theme="dark" isCentered />
 
-* [Learn more](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
+![Resource 1](images/stock-teaser4.jpg)
 
+### 99designs
 
+The global creative platform gives designers on its platform the ability to easily and seamlessly access the Adobe Stock library of stock images. Learn more
 
+<ResourceCard slots="link, image, heading, text" width="45%" variant="vertical" />
 
-<TextBlock slots="image, heading, text, links" width="33%" theme="light" isCentered />
+[Adobe Tech Blog](https://medium.com/adobetech/adobe-stock-for-developers-913186f89415)
 
-![JIRA Cloud logo](images/jira.png)
+![Image from Tech Blog Article](images/stockfrommedium.png)
 
-### JIRA Cloud
+### Adobe Stock for Developers - Adobe Tech Blog - Medium
 
-Make designer to developer handoffs easy. Find the latest designs and specs and get thumbnail previews and asset info.
+Adobe Stock's enterprise grade search API opens new doors to developers, companies, and their users.
 
-* [Learn more](https://www.atlassian.com/enterprise/cloud)
+<ResourceCard slots="link, image, heading, text" width="45%" variant="vertical" />
 
+[Adobe Tech Blog](https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312?source=friends_link&sk=50008766fb188abfa91bce5786baa1cf)
 
+![Image from Tech Blog Article](images/stockcat.jpeg)
 
+### Get Paid to Search Adobe Stock!¹ - Adobe Tech Blog - Medium
 
-<TextBlock slots="image, heading, text, links" width="33%" theme="light" isCentered />
+You can earn commissions from hosting Adobe Stock search and banners on your website.
 
-![Slack logo](images/slack.png)
+<TextBlock slots="video, heading, text" />
 
-### Slack
+[Adobe Stock Video](https://www.youtube.com/watch?v=uCcgozf0qVE&feature=youtu.be&ab_channel=AdobeDevelopers) 
 
-Instantly share Creative Cloud files, designs, specs, and notifications all in real time.
+### Adobe Stock for Developers
 
-* [Learn more](https://slack.com/enterprise)
-
-
-
-
-<TextBlock slots="video, icons, heading, text, buttons" theme="dark" />
-
-[Creative Cloud for a new era](https://www.youtube.com/watch?v=JemJbNJ4ZtU&ab_channel=AdobeCreativeCloud)
-
-* ![Adobe](images/adobe.png)
-* ![Microsoft](images/msft.png)
-
-### Partner Success Story
-
-Connect your users to Creative Cloud right from within your mobile or web apps with our service APIs. Give users access to 
-world-class creative assets with the Adobe Stock API, or sign up for early information on our upcoming CC Storage API.
-
-* [Learn more](https://adobe.io)
-* [Sign up for partner program](https://adobe.io)
-
-
-
-
-<TitleBlock slots="heading, text" />
-
-### Blogs and resources
-
-With the Cloud Content APIs, you can bring design work created in XD directly to your product or service.
-
-
-
-
-<ResourceCard slots="link, image, heading, text" width="50%" variant="vertical" />
-
-[Adobe I/O](https://adobe.io)
-
-![Resource 3](images/resource3.png)
-
-### Creating a Great Adobe XD Plugin Listing 
-
-Rob Kleiman, July 8th 2020
-
-
-
-<ResourceCard slots="link, image, heading, text" width="50%" />
-
-[Adobe I/O](https://adobe.io)
-
-![Resource 1](images/resource1.png)
-
-### Pattern Builder: A Behind the Scenes Look at Adobe Capture
-
-Nihil Gupta, July 24th 2020
-
-
-
-<ResourceCard slots="link, image, heading, text" width="50%" />
-
-[Adobe I/O](https://adobe.io)
-
-![Resource 1](images/resource2.png)
-
-### Photoshop Extensibility Enters a New Era Soon: How to get Involved Early
-
-Ash Ryan Arnwine, March 12th 2020
-
-
-
-
-<TitleBlock slots="heading" theme="light" />
-
-## Get started building with Creative Cloud
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### CC Storage API
-
-CC Storage API lets you access and modify assets stored in the Creative Cloud, the world's most popular creative platform. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="heading, text, buttons" theme="light" width="33%" />
-
-#### Adobe Stock
-
-Gives your users access to the perfect Adobe Stock asset to enhance their creative projects. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### Common Extensibility Platform
-
-Build extensions with HTML, CSS, Javascript and Node. Deploy across multiple Adobe apps. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### CC Storage API
-
-CC Storage API lets you access and modify assets stored in the Creative Cloud, the world's most popular creative platform. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="heading, text, buttons" theme="light" width="33%" />
-
-#### Adobe Stock
-
-Gives your users access to the perfect Adobe Stock asset to enhance their creative projects. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### Common Extensibility Platform
-
-Build extensions with HTML, CSS, Javascript and Node. Deploy across multiple Adobe apps. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### CC Storage API
-
-CC Storage API lets you access and modify assets stored in the Creative Cloud, the world's most popular creative platform. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="heading, text, buttons" theme="light" width="33%" />
-
-#### Adobe Stock
-
-Gives your users access to the perfect Adobe Stock asset to enhance their creative projects. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### Common Extensibility Platform
-
-Build extensions with HTML, CSS, Javascript and Node. Deploy across multiple Adobe apps. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### CC Storage API
-
-CC Storage API lets you access and modify assets stored in the Creative Cloud, the world's most popular creative platform. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="heading, text, buttons" theme="light" width="33%" />
-
-#### Adobe Stock
-
-Gives your users access to the perfect Adobe Stock asset to enhance their creative projects. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### Common Extensibility Platform
-
-Build extensions with HTML, CSS, Javascript and Node. Deploy across multiple Adobe apps. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
+The Adobe I/O platform for our APIs makes it easier for our partners to develop against these APIs. Here's a look at how Adobe Stock is working to expose our search and authentication APIs on Adobe I/O.
 
 
 <SummaryBlock slots="image, heading, text, buttons" background="rgb(246, 16, 27)" />
 
 ![CC banner](images/cc-banner.png)
 
-## Subscribe to the Creative Cloud developers newsletter 
+## Subscribe to the Creative Cloud developer newsletter 
 
 A monthly newsletter featuring news for anyone who creates, develops, or build plugins, extensions, or integrations for the
 Creative Cloud family of products.
 
-* [Subscribe to the newsletter](https://adobe.io)
-* [Learn more](https://adobe.io)
+* [Subscribe to the newsletter](https://www.adobe.com/subscription/ccdevnewsletter.html)
