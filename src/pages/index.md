@@ -41,7 +41,8 @@ Create a full end-to-end experience with Adobe Stock and your Digital Asset Mana
 
 <TextBlock slots="image, heading, text" width="50%" theme="light" isCentered />
 
-![Stock Feature](images/stock-feature4.jpg)
+<!-- ![Stock Feature](images/stock-feature4.jpg) -->
+![Stock Feature](images/stockcat.jpeg)
 
 ### Enterprise
 
@@ -49,7 +50,9 @@ Use the Adobe Stock API to make it easy for your team to find stock assets, acce
 
 <TextBlock slots="image, heading, text" width="50%" theme="light" isCentered />
 
-![Stock Feature](images/stock-feature5.jpg)
+<!-- ![Stock Feature](images/stock-feature5.jpg) -->
+
+![Stock Feature](images/stockcat.jpeg)
 
 ### Affiliates
 
@@ -58,7 +61,7 @@ Earn referral fees for including the search API or banners on your site.
 
 <TextBlock slots="image, heading, text" width="25%" theme="dark" isCentered />
 
-![Microsoft](images/msfteams.png    )
+![Microsoft](images/msfteams.png)
 
 ### Microsoft
 
