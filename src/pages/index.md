@@ -11,11 +11,13 @@ description: This is the home page of Adobe Stock APIs
 
 # Build a better business with Adobe Stock.
 
-Give your users access to stunning Adobe Stock high-quality images, graphics, and videos to use in their ads, email templates, and websites. It’s a great way to increase customer satisfaction and generate additional revenue—and it’s easy to implement. Interested in partnering with Adobe Stock, or want to learn more about our plans and pricing options? [Contact us](Grp-AdobeStockPartnerships@adobe.com?subject=AdobeI/O"), and please include [Adobe I/O] in the subject line.
+Give your users access to stunning Adobe Stock high-quality images, graphics, and videos to use in their ads, email templates, and websites. It’s a great way to increase customer satisfaction and generate additional revenue—and it’s easy to implement. Interested in partnering with Adobe Stock, or want to learn more about our plans and pricing options? [Contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=AdobeI/O), and please include [Adobe I/O] in the subject line.
 
-* [Start building today](https://console.adobe.io/downloads/lr)
+* [Get started](https://www.adobe.io/apis/creativecloud/stock/docs.html)
 
+<TitleBlock slots="heading" theme="dark" />
 
+### The Adobe Stock API is great for...
 
 <TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
@@ -43,7 +45,6 @@ Create a full end-to-end experience with Adobe Stock and your Digital Asset Mana
 
 <TextBlock slots="image, heading, text" width="50%" theme="dark" isCentered />
 
-<!-- ![Stock Feature](images/stock-feature4.jpg) -->
 ![Stock Feature](images/stock-feature4.jpg)
 
 ### Enterprise
@@ -52,7 +53,6 @@ Use the Adobe Stock API to make it easy for your team to find stock assets, acce
 
 <TextBlock slots="image, heading, text" width="50%" theme="dark" isCentered />
 
-<!-- ![Stock Feature](images/stock-feature5.jpg) -->
 
 ![Stock Feature](images/stock-feature5.jpg)
 
@@ -61,7 +61,7 @@ Use the Adobe Stock API to make it easy for your team to find stock assets, acce
 Earn referral fees for including the search API or banners on your site.
 
 
-<TextBlock slots="image, heading, text" width="25%" theme="light" isCentered />
+<TextBlock slots="image, heading, text, links" width="25%" theme="light" isCentered />
 
 ![Microsoft](images/msfteams.png)
 
@@ -69,8 +69,9 @@ Earn referral fees for including the search API or banners on your site.
 
 Search and license Adobe Stock images right inside Microsoft PowerPoint and Microsoft Teams, thanks to a strategic partnership between Adobe and Microsoft.
 
+- [Try it now](https://store.office.com/en-us/app.aspx?assetid=WA104380902)
 
-<TextBlock slots="image, heading, text" width="25%" theme="light" isCentered />
+<TextBlock slots="image, heading, text, links" width="25%" theme="light" isCentered />
 
 
 ![Google Logo](images/google-logo.png)
@@ -79,7 +80,9 @@ Search and license Adobe Stock images right inside Microsoft PowerPoint and Micr
 
 Add more polish to presentations with the Adobe Stock add-on for Google Slides. Find images by keywords or visual search and browse curated collections.
 
-<TextBlock slots="image, heading, text" width="25%" theme="light" isCentered />
+- [Get the add-on](https://chrome.google.com/webstore/detail/adobe-stock/hlademlgjnbejekiikfjchnggniijlpe)
+
+<TextBlock slots="image, heading, text, links" width="25%" theme="light" isCentered />
 
 ![Hootsuite Logo](images/adobe-io-logos-hoot.svg)
 
@@ -87,14 +90,17 @@ Add more polish to presentations with the Adobe Stock add-on for Google Slides. 
 
 Get access to Adobe Stock inside Hootsuite, the most widely used social media management Platform, and publish content instantly to your channels.
 
+- [Learn more](https://hootsuite.com/pages/adobe)
 
-<TextBlock slots="image, heading, text" width="25%" theme="light" isCentered />
+<TextBlock slots="image, heading, text, links" width="25%" theme="light" isCentered />
 
 ![99U Logo](images/adobe-io-logos-99d.svg)
 
 ### 99designs
 
-The global creative platform gives designers on its platform the ability to easily and seamlessly access the Adobe Stock library of stock images. Learn more
+The global creative platform gives designers on its platform the ability to easily and seamlessly access the Adobe Stock library of stock images.
+
+- [Learn more](https://99designs.com/promo/adobe-stock)
 
 <ResourceCard slots="link, image, heading, text" width="45%" variant="vertical" />
 
@@ -110,7 +116,7 @@ Adobe Stock's enterprise grade search API opens new doors to developers, compani
 
 [Adobe Tech Blog](https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312?source=friends_link&sk=50008766fb188abfa91bce5786baa1cf)
 
-![Stock Cat Image from Tech Blog Article](images/stockcat.jpeg)
+![Stock Cat Image from Tech Blog Article](images/stock_cat.png)
 
 ### Get Paid to Search Adobe Stock!¹ - Adobe Tech Blog - Medium
 
