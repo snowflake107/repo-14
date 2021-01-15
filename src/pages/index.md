@@ -69,7 +69,7 @@ Earn referral fees for including the search API or banners on your site.
 
 Search and license Adobe Stock images right inside Microsoft PowerPoint and Microsoft Teams, thanks to a strategic partnership between Adobe and Microsoft.
 
-- [Try it in now](https://store.office.com/en-us/app.aspx?assetid=WA104380902)
+- [Try it now](https://store.office.com/en-us/app.aspx?assetid=WA104380902)
 
 <TextBlock slots="image, heading, text, links" width="25%" theme="light" isCentered />
 
