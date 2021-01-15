@@ -13,7 +13,7 @@ description: This is the home page of Adobe Stock APIs
 
 Give your users access to stunning Adobe Stock high-quality images, graphics, and videos to use in their ads, email templates, and websites. It’s a great way to increase customer satisfaction and generate additional revenue—and it’s easy to implement. Interested in partnering with Adobe Stock, or want to learn more about our plans and pricing options? [Contact us](mailto:Grp-AdobeStockPartnerships@adobe.com?subject=AdobeI/O), and please include [Adobe I/O] in the subject line.
 
-* [Start building today](https://console.adobe.io/downloads/lr)
+* [Get started](https://www.adobe.io/apis/creativecloud/stock/docs.html)
 
 <TitleBlock slots="heading" theme="dark" />
 
