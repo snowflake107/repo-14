@@ -131,7 +131,7 @@ You can earn commissions from hosting Adobe Stock search and banners on your web
 The Adobe I/O platform for our APIs makes it easier for our partners to develop against these APIs. Here's a look at how Adobe Stock is working to expose our search and authentication APIs on Adobe I/O.
 
 
-<SummaryBlock slots="image, heading, text, buttons" background="rgb(246, 16, 27)" />
+<SummaryBlock slots="image, heading, text, buttons" background="rgb(9, 90, 186)" />
 
 ![CC banner](images/cc-banner.png)
 
