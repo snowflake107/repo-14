@@ -5,9 +5,9 @@ description: This is the home page of Adobe Stock APIs
 
 <Hero slots="image, icon, heading, text, buttons" variant="halfwidth" />
 
-![Creative Cloud banner](images/cc-hero.png)
+![Creative Cloud banner](https://adobe.io/shared/images/cc-hero.png)
 
-![Stock Logo](images/st_appicon_256.svg)
+![Stock Logo](https://adobe.io/shared/icons/st_appicon_64.svg)
 
 # Build a better business with Adobe Stock.
 
@@ -133,7 +133,7 @@ The Adobe I/O platform for our APIs makes it easier for our partners to develop 
 
 <SummaryBlock slots="image, heading, text, buttons" background="rgb(9, 90, 186)" />
 
-![CC banner](images/cc-banner.png)
+![CC banner](https://adobe.io/shared/images/cc-banner.png)
 
 ## Subscribe to the Creative Cloud developer newsletter 
 
