@@ -102,7 +102,7 @@ The global creative platform gives designers on its platform the ability to easi
 
 - [Learn more](https://99designs.com/promo/adobe-stock)
 
-<ResourceCard slots="link, image, heading, text" width="45%" variant="vertical" />
+<ResourceCard slots="link, image, heading, text" width="50%" />
 
 [Adobe Tech Blog](https://medium.com/adobetech/adobe-stock-for-developers-913186f89415)
 
@@ -112,7 +112,7 @@ The global creative platform gives designers on its platform the ability to easi
 
 Adobe Stock's enterprise grade search API opens new doors to developers, companies, and their users.
 
-<ResourceCard slots="link, image, heading, text" width="45%" variant="vertical" />
+<ResourceCard slots="link, image, heading, text" width="50%" />
 
 [Adobe Tech Blog](https://medium.com/adobetech/get-paid-to-search-adobe-stock-e2ba9a7c0312?source=friends_link&sk=50008766fb188abfa91bce5786baa1cf)
 
