@@ -1,4 +1,8 @@
 ---
+keywords:
+  - Creative Cloud
+  - API Documentation
+  - JavaScript
 title: Creative Cloud - Adobe Stock
 description: This is the home page of Adobe Stock APIs 
 ---
