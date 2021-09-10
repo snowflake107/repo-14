@@ -1,19 +1,17 @@
 ---
-title: Home - PWA Studio
-description: Developer documentation for PWA Studio
+title: Home - Studio Doc Plans
+description: Solutions to documentation issues
 contributors:
-  - https://github.com/jcalcaben
+  - https://github.com/bdenham
 ---
 
 <Hero slots="image, heading, text" background="rgb(64, 34, 138)"/>
 
 ![Hero image](./big.png)
 
-# Studio Docs Rearchitecture
+# Studio Docs Plan
 
 PWA Studio provides the tools and components you need to start building Progressive Web Applications for Adobe Commerce.
-
-<Resources slots="heading, links"/>
 
 #### Resources
 

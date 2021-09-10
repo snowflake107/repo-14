@@ -1,17 +1,15 @@
 module.exports = [
     {
-        title: "Docs Plan",
+        title: "Studio Docs Plan",
         path: "/docs/",
         header: true,
-        pages: [
-            {
-                title: "Feedback on Current Docs",
-                path: "/docs/feedback/",
-            },
-            {
-                title: "New Docs Architecture",
-                path: "/docs/architecture/",
-            },
-        ],
     },
-];
+    {
+        title: "Documentation Issues",
+        path: "/docs/issues/",
+    },
+    {
+        title: "Documentation Solutions",
+        path: "/docs/solutions/",
+    },
+]

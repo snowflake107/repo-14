@@ -1,14 +1,10 @@
 module.exports = [
   {
-    title: "PWA Studio",
-    path: "/",
-  },
-  {
-    title: "Docs Plan",
+    title: "Studio Docs Plan",
     path: "/docs/",
   },
   {
-    title: "Get Started",
+    title: "Getting Started",
     path: "/start/",
   },
   {

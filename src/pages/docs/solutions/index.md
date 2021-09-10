@@ -1,8 +1,15 @@
-# New Docs Architecture
+# Documentation Solutions
+
+
+
+- New Documentation Architecture
+- New Examples Repository (like Page Builder's)
+
+## New Documtation Architecture
 
 The following outline shows the order and content for the new documentation. This outline will guide our documentation efforts over the next several months. Sections are written in ALL CAPS and correspond to the top-level headings in the left-side navigation. The numbered topics represent the proposed order of topics within that section.
 
-## GETTING STARTED
+### GETTING STARTED
 
 **1. TOPIC: What is PWA Studio?**
 
@@ -51,15 +58,7 @@ KEYBOARD
 
 Provide step-by-step instructions for creating a PWA that uses some of the basic features/functions of PWA Studio. The emphasis should be on providing an introduction to a basic PWA Studio workflow, with a simple working app at the end.
 
-## Examples
-
-**Examples should be housed in a separate repo dedicated to PWA Studio examples (like the Page Builder examples repo). Each example should:
-
-- Show best-practice usages of PWA Studio features/components and React.
-- Provide clear installation and usage instructions.
-- Be referenced from the Best Practices section of the docs.
-
-## Components
+### Components
 
 This section should provide a topic for each Studio component, with deeper documentation that complements the API docs generated from the jsdoc comments.
 Each component topic should provide usage examples and whatever else makes sense for a topic that should provide all the information devs want to know about the component.
@@ -67,13 +66,16 @@ Each component topic should provide usage examples and whatever else makes sense
 - Provide conceptual information about Studio components in general. Describe the component's purpose, how it's used, and what it's used for.
 - Anatomy of a component [PWA-1902](https://jira.corp.magento.com/browse/PWA-1902)
 
+### Hooks and Talons
 
-## How Tos
+### Build tools
+
+### How Tos
 
 This section should contain small how-to topics that focus on how to add features to an existing PWA.
 The topics should provide instructions that incorporate PWA Studio framework features and components to provide solutions to common PWA development goals.
 
-## Best Practices
+### Best Practices
 
 This section should provide a kind of checklist/list of best practices consolidated into one place in the docs for easy access and review. Each best practice should be structured as follows:
 
@@ -82,10 +84,18 @@ This section should provide a kind of checklist/list of best practices consolida
 - In-topic code example, if relevant
 - One or more links to existing code in PWA Examples repo
 
-## Deployment
+### Deployment
 
 This section should provide documentation about the deployment options with pros and cons of each.
 
-## APIs
+### APIs
 
 Houses
+
+## New Examples Repository
+
+Studio app examples should have their own repo dedicated to providing best-practice examples for the most common/useful requests from developers (like the Page Builder examples repo). Each example should:
+
+- Show best-practice usages of PWA Studio features/components and React.
+- Provide clear installation and usage instructions.
+- Be referenced from the Best Practices section of the docs.
