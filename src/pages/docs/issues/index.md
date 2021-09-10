@@ -1,5 +1,5 @@
 
-# Doc Issues
+# Documentation Issues
 
 Below is a list of the most recent feedback on the current docs.
 

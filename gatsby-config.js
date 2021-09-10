@@ -12,143 +12,75 @@
 
 module.exports = {
   siteMetadata: {
-    versions: [
-      {
-        title: 'v2.0',
-        selected: true
-      },
-      {
-        title: 'v1.4',
-        path: 'https://github.com/AdobeDocs/analytics-1.4-apis'
-      }
-    ],
     pages: [
       {
-        title: 'Adobe Analytics',
-        path: '/'
+        title: "Studio Docs Plan",
+        path: "/docs/",
       },
       {
-        title: 'Guides',
-        path: '/guides/'
+        title: "Getting Started",
+        path: "/start/",
       },
       {
-        title: 'API Reference',
-        menu: [{
-          title: 'API Reference v2.0',
-          description: 'Adobe Analytics Reporting API',
-          path: '/api/index.md'
-        }, {
-          title: 'API Reference v1.4',
-          description: 'API Spec for the Adobe Marketing Cloud',
-          path: '/api/1.4.md'
-        }]
+        title: "Examples",
+        path: "/examples/",
       },
       {
-        title: 'Support',
-        path: '/support/'
-      }
+        title: "Components",
+        path: "/components/",
+      },
+      {
+        title: "Hooks",
+        path: "/hooks/",
+      },
+      {
+        title: "Tutorials",
+        path: "/tutorials/",
+      },
+      {
+        title: "API Reference",
+        path: "/api/",
+      },
     ],
     subPages: [
       {
-        title: 'Get Started',
-        path: '/guides/',
-        pages: [
-          {
-            title: 'Overview',
-            path: '/guides/'
-          },
-          {
-            title: 'Creating an OAuth Client',
-            path: '/guides/creating_oauth_client/'
-          },
-          {
-            title: 'OAuth using cURL',
-            path: '/guides/oauth_using_curl/'
-          },
-          {
-            title: 'OAuth using POSTMAN',
-            path: '/guides/oauth_using_postman/'
-          },
-          {
-            title: 'JWT Authentication',
-            path: '/guides/jwt_authentication/'
-          }
-        ]
-      },
-      {
-        title: 'Reporting API',
-        path: '/guides/reporting_api/',
-        pages: [
-          {
-            title: 'Overview',
-            path: '/guides/reporting_api/'
-          },
-          {
-            title: 'Reporting with breakdowns',
-            path: '/guides/reporting_api/reporting_breakdowns/',
-            pages: [
-              {
-                title: 'Reporting with single breakdowns',
-                path: '/guides/reporting_api/reporting_breakdowns/',
-              },
-              {
-                title: 'Reporting with multiple breakdowns',
-                path: '/guides/reporting_api/reporting_breakdowns/reporting_multiple_breakdowns/',
-              },
-            ]
-          },
-          {
-            title: 'Reporting tips and tricks',
-            path: '/guides/reporting_api/reporting_tips_tricks/'
-          }
-        ]
-      },
-      {
-        title: 'Discovery API',
-        path: '/guides/discovery_api/'
-      },
-      {
-        title: 'Segments API',
-        path: '/guides/segments_api/'
-      },
-      {
-        title: 'Calculated Metrics API',
-        path: '/guides/calculated_metrics_api/'
-      },
-      {
-        title: 'Migrating',
-        path: '/guides/migrating/'
-      },
-      {
-        title: 'Overview',
-        path: '/support/',
+        title: "Studio Docs Plan",
+        path: "/docs/",
         header: true,
         pages: [
           {
-            title: 'Help',
-            path: '/support/'
+            title: "Documentation Issues",
+            path: "/docs/issues/",
           },
           {
-            title: 'FAQ',
-            path: '/support/FAQ/'
+            title: "Documentation Solutions",
+            path: "/docs/solutions/",
           },
-          {
-            title: 'How to contribute',
-            path: '/support/contribute/'
-          }
         ]
       },
       {
-        title: 'Community',
-        path: '/support/community/',
+        title: "Getting Started",
+        path: "/start/",
         header: true,
         pages: [
           {
-            title: 'Information',
-            path: '/support/community/'
-          }
+            title: "What is PWA Studio?",
+            path: "/start/",
+          },
+          {
+            title: "Set up a Studio app",
+            path: "/start/setup/",
+          },
+          {
+            title: "Customize a Studio app",
+            path: "/start/customize/",
+          },
+          {
+            title: "Create a Studio app",
+            path: "/start/create/",
+          },
         ]
-      }
+      },
     ]
   },
   plugins: [`@adobe/gatsby-theme-aio`],
