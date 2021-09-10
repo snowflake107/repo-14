@@ -14,72 +14,63 @@ module.exports = {
   siteMetadata: {
     pages: [
       {
-        title: "Studio Docs Plan",
-        path: "/docs/",
-      },
-      {
-        title: "Getting Started",
-        path: "/start/",
-      },
-      {
-        title: "Examples",
-        path: "/examples/",
-      },
-      {
-        title: "Components",
-        path: "/components/",
-      },
-      {
-        title: "Hooks",
-        path: "/hooks/",
-      },
-      {
-        title: "Tutorials",
-        path: "/tutorials/",
-      },
-      {
-        title: "API Reference",
-        path: "/api/",
-      },
+        title: "Studio Doc Plans",
+        path: "/plans/",
+      }
     ],
     subPages: [
       {
-        title: "Studio Docs Plan",
-        path: "/docs/",
-        header: true,
+        title: "Plans",
+        path: "/plans/",
+        header: false,
         pages: [
           {
-            title: "Documentation Issues",
-            path: "/docs/issues/",
+            title: "Current Issues",
+            path: "/plans/issues/",
           },
           {
-            title: "Documentation Solutions",
-            path: "/docs/solutions/",
+            title: "Proposed Solutions",
+            path: "/plans/solutions/",
+          },
+          {
+            title: "Action Items / Stories",
+            path: "/plans/actionItems/",
           },
         ]
       },
       {
+        title: "What is PWA Studio?",
+        path: "/plans/start/",
+      },
+      {
+        title: "Release notes",
+        path: "/plans/releases/",
+      },
+      {
+        title: "Example apps",
+        path: "/plans/examples/",
+      },
+      {
         title: "Getting Started",
-        path: "/start/",
-        header: true,
+        path: "/plans/start/",
         pages: [
           {
             title: "What is PWA Studio?",
-            path: "/start/",
+            path: "/plans/start/",
           },
           {
             title: "Set up a Studio app",
-            path: "/start/setup/",
+            path: "/plans/start/setup/",
           },
           {
             title: "Customize a Studio app",
-            path: "/start/customize/",
+            path: "/plans/start/customize/",
           },
           {
             title: "Create a Studio app",
-            path: "/start/create/",
+            path: "/plans/start/create/",
           },
-        ]
+        ],
       },
     ]
   },

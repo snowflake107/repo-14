@@ -1,17 +1,28 @@
-# Documentation Solutions
+# Proposed Solutions
 
+## New topic structure
 
+PWA Studio docs will introduce a new topic structure similar to components — *topics as components*. Like a react component, a doc topic will be as self-contained as possible. Each topic will have two parts: the *concept* and the *keyboard*.
 
-- New Documentation Architecture
-- New Examples Repository (like Page Builder's)
+The *concept* (component logic / business rules) will provide clear, succinct descriptions of the topic — using engaging diagrams when helpful.
 
-## New Documtation Architecture
+The *keyboard* (rendering of logic) will provide the practical steps that use the concepts, to make learning quicker and easier. No more navigating to different parts of the docs to figure out how the concept relates to the practical development tasks.
+
+## New Examples Repository
+
+Studio app examples should have their own repo dedicated to providing best-practice examples for the most common/useful requests from developers (like the Page Builder examples repo). Each example should:
+
+- Show best-practice usages of PWA Studio features/components and React.
+- Provide clear installation and usage instructions.
+- Be referenced from the Best Practices section of the docs.
+
+## New Documentation Architecture
 
 The following outline shows the order and content for the new documentation. This outline will guide our documentation efforts over the next several months. Sections are written in ALL CAPS and correspond to the top-level headings in the left-side navigation. The numbered topics represent the proposed order of topics within that section.
 
 ### GETTING STARTED
 
-**1. TOPIC: What is PWA Studio?**
+#### 1. TOPIC: What is PWA Studio?
 
 CONCEPTS
 
@@ -26,7 +37,7 @@ KEYBOARD
 
 - Add links to the best 3-4 sites created with PWA Studio and callout at least one compelling area of the site that illustrates the case for using PWA Studio.
 
-**2. TOPIC: Set up PWA Studio**
+#### 2. TOPIC: Set up PWA Studio
 
 This is a critically important topic, which could be expanded into a section if needed. As the saying goes, you're only as good as your tools. And when you feel confident that you're using the best tools – on a solid "workbench" (environment) – your motivation grows, your confidence increases, and good feelings carry you into the challenges ahead.
 
@@ -43,7 +54,7 @@ KEYBOARD
 - Identify, use, and provide examples for when to use the `package.json scripts` provided with the Venia sample project.
 - Include a setup validation exercise (via one or more of the scripts) so that all the common setup problems can be fixed before they start development in the first tutorials.
 
-**3. TOPIC: Customize a Studio app**
+#### 3. TOPIC: Customize a Studio app
 
 CONCEPTS
 
@@ -54,7 +65,7 @@ KEYBOARD
 - Provide 3-4 short tutorials that show how to customize the Venia app they set up in the setup topic.
 
 
-**4. TOPIC: Create a Studio app**
+#### 4. TOPIC: Create a Studio app
 
 Provide step-by-step instructions for creating a PWA that uses some of the basic features/functions of PWA Studio. The emphasis should be on providing an introduction to a basic PWA Studio workflow, with a simple working app at the end.
 
@@ -90,12 +101,4 @@ This section should provide documentation about the deployment options with pros
 
 ### APIs
 
-Houses
-
-## New Examples Repository
-
-Studio app examples should have their own repo dedicated to providing best-practice examples for the most common/useful requests from developers (like the Page Builder examples repo). Each example should:
-
-- Show best-practice usages of PWA Studio features/components and React.
-- Provide clear installation and usage instructions.
-- Be referenced from the Best Practices section of the docs.
+Refinement of existing API docs.
