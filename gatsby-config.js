@@ -39,18 +39,6 @@ module.exports = {
         ]
       },
       {
-        title: "What is PWA Studio?",
-        path: "/plans/start/",
-      },
-      {
-        title: "Release notes",
-        path: "/plans/releases/",
-      },
-      {
-        title: "Example apps",
-        path: "/plans/examples/",
-      },
-      {
         title: "Getting Started",
         path: "/plans/start/",
         pages: [
@@ -71,6 +59,14 @@ module.exports = {
             path: "/plans/start/create/",
           },
         ],
+      },
+      {
+        title: "Example apps",
+        path: "/plans/examples/",
+      },
+      {
+        title: "Release notes",
+        path: "/plans/releases/",
       },
     ]
   },
