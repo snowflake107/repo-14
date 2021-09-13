@@ -20,23 +20,8 @@ module.exports = {
     ],
     subPages: [
       {
-        title: "Plans",
-        path: "/plans/",
-        header: false,
-        pages: [
-          {
-            title: "Current Issues",
-            path: "/plans/issues/",
-          },
-          {
-            title: "Proposed Solutions",
-            path: "/plans/solutions/",
-          },
-          {
-            title: "Action Items / Stories",
-            path: "/plans/actionItems/",
-          },
-        ]
+        title: "Admin UI settings",
+        path: "/plans/examples/",
       },
       {
         title: "Getting Started",
@@ -53,10 +38,6 @@ module.exports = {
           {
             title: "Customize a Studio app",
             path: "/plans/start/customize/",
-          },
-          {
-            title: "Create a Studio app",
-            path: "/plans/start/create/",
           },
         ],
       },
