@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ArtifactResolver {
   private static final Logger LOG = LoggerFactory.getLogger(ArtifactResolver.class);
@@ -35,14 +36,8 @@ public class ArtifactResolver {
     if (parts.length < 3) {
       throw new MojoExecutionException("Must include at least groupId:artifactId:version in artifact coordinates" + coordinates);
     }
-    String packaging = "";
-    if (parts.length == 4) {
-      packaging = parts[3];
-    } else {
-      throw new MojoExecutionException("Unrecognized artifact coordinates: " + coordinates);
-    }
 
-    return repositorySystem.createArtifact(parts[0], parts[1], parts[2], packaging);
+    return repositorySystem.createArtifact(parts[0], parts[1], parts[2], "runtime", "jar");
   }
 
   public Set<Artifact> resolveArtifactsAndDependencies(Set<Artifact> artifacts) throws MojoExecutionException {
@@ -51,23 +46,24 @@ public class ArtifactResolver {
     }
 
     Set<Artifact> resultArtifacts = new HashSet<>();
-    for (Artifact artifact : artifacts) {
-      ArtifactResolutionRequest request = new ArtifactResolutionRequest()
-          .setArtifact(artifact)
-          .setLocalRepository(localRepository)
-          .setRemoteRepositories(remoteRepositories)
-          .setResolveTransitively(true);
+    Artifact artifact = artifacts.iterator().next();
+    ArtifactResolutionRequest request = new ArtifactResolutionRequest()
+        .setArtifact(artifact)
+        .setArtifactDependencies(artifacts)
+        .setLocalRepository(localRepository)
+        .setRemoteRepositories(remoteRepositories)
+        .setResolveTransitively(true)
+        .setResolveRoot(true);
 
-      ArtifactResolutionResult resolution = repositorySystem.resolve(request);
-      if (!resolution.isSuccess()) {
-        if (resolution.hasMissingArtifacts()) {
-          LOG.warn("Missing artifacts for {}: {}", artifact.getId(), resolution.getMissingArtifacts());
-        }
-        resolution.getExceptions().forEach(e -> LOG.warn("Failed to resolve artifacts and/or dependencies for {}: {}", artifact.getId(), e.getMessage()));
-        throw new MojoExecutionException("Failed to resolve requested artifacts transitive dependencies.");
-      } else {
-        resultArtifacts.addAll(resolution.getArtifacts());
+    ArtifactResolutionResult resolution = repositorySystem.resolve(request);
+    if (!resolution.isSuccess()) {
+      if (resolution.hasMissingArtifacts()) {
+        LOG.warn("Missing artifacts for {}: {}", artifact.getId(), resolution.getMissingArtifacts());
       }
+      resolution.getExceptions().forEach(e -> LOG.warn("Failed to resolve artifacts and/or dependencies for {}: {}", artifact.getId(), e.getMessage()));
+      throw new MojoExecutionException("Failed to resolve requested artifacts transitive dependencies.");
+    } else {
+      resultArtifacts.addAll(resolution.getArtifacts());
     }
 
     return resultArtifacts;

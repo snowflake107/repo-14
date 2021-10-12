@@ -2,6 +2,7 @@ package org.openrewrite.maven;
 
 import com.puppycrawl.tools.checkstyle.Checker;
 import io.micrometer.core.instrument.Metrics;
+import org.apache.maven.artifact.Artifact;
 import org.apache.maven.artifact.DependencyResolutionRequiredException;
 import org.apache.maven.execution.MavenSession;
 import org.apache.maven.model.Plugin;
@@ -510,18 +511,25 @@ public abstract class AbstractRewriteMojo extends ConfigurableRewriteMojo {
     private URLClassLoader getRecipeClassloader() throws MojoExecutionException {
         ArtifactResolver resolver = new ArtifactResolver(repositorySystem, mavenSession);
 
-        Set<URL> artifacts = new HashSet<>();
+        Set<Artifact> artifacts = new HashSet<>();
         for (String coordinate : getRecipeArtifactCoordinates()) {
+            artifacts.add(resolver.createArtifact(coordinate));
+        }
+
+        Set<Artifact> resolvedArtifacts = resolver.resolveArtifactsAndDependencies(artifacts);
+        Set<URL> urls = new HashSet<>();
+        for (Artifact artifact : resolvedArtifacts) {
             try {
-                artifacts.add(resolver.createArtifact(coordinate).getFile().toURI().toURL());
+                urls.add(artifact.getFile().toURI().toURL());
             } catch (MalformedURLException e) {
-                throw new MojoExecutionException("Failed to resolve recipe artifact coordinates", e);
+                throw new MojoExecutionException("Failed to resolve artifacts from rewrite.recipeArtifactCoordinates", e);
             }
         }
 
-        URL[] urls = new URL[artifacts.size()];
         return new URLClassLoader(
-            artifacts.toArray(urls)
+            urls.toArray(new URL[0]),
+            // TODO - confirm this is always the correct classloader in this plexus context
+            AbstractRewriteMojo.class.getClassLoader()
         );
     }
 
