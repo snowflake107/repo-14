@@ -295,7 +295,7 @@ public abstract class AbstractRewriteMojo extends ConfigurableRewriteMojo {
             }
 
             for (String resource : getAdditionalResourceDirs()) {
-               addToResources(ctx, mainResources, resource);
+               addToResources(ctx, mainResources, project.getBasedir().toPath().resolve(resource).toString());
             }
 
             //Add provenance information to main source files
