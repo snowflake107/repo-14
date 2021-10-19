@@ -294,6 +294,10 @@ public abstract class AbstractRewriteMojo extends ConfigurableRewriteMojo {
                 addToResources(ctx, mainResources, resource);
             }
 
+            for (String resource : getAdditionalResourceDirs()) {
+               addToResources(ctx, mainResources, resource);
+            }
+
             //Add provenance information to main source files
             List<Marker> projectProvenance = getJavaProvenance();
             JavaSourceSet mainProvenance = JavaSourceSet.build("main", dependencies, ctx);
@@ -496,10 +500,14 @@ public abstract class AbstractRewriteMojo extends ConfigurableRewriteMojo {
     }
 
     private void addToResources(ExecutionContext ctx, Set<Path> resources, Resource resource) {
-        File file = new File(resource.getDirectory());
+        addToResources(ctx, resources, resource.getDirectory());
+    }
+
+    private void addToResources(ExecutionContext ctx, Set<Path> resources, String path) {
+        File file = new File(path);
         if (file.exists()) {
             BiPredicate<Path, BasicFileAttributes> predicate = (p, bfa) ->
-                    bfa.isRegularFile() && Stream.of("yml", "yaml", "properties", "xml").anyMatch(type -> p.getFileName().toString().endsWith(type));
+                bfa.isRegularFile() && Stream.of("yml", "yaml", "properties", "xml").anyMatch(type -> p.getFileName().toString().endsWith(type));
             try {
                 Files.find(file.toPath(), 999, predicate).forEach(resources::add);
             } catch (IOException e) {

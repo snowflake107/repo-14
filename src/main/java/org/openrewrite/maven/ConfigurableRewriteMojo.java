@@ -31,6 +31,10 @@ public abstract class ConfigurableRewriteMojo extends AbstractMojo {
   private String rewriteActiveStyles;
 
   @Nullable
+  @Parameter(property = "rewrite.additionalResourceDirs")
+  private String additionalResourceDirs;
+
+  @Nullable
   @Parameter(property = "rewrite.metricsUri", alias = "metricsUri")
   protected String metricsUri;
 
@@ -76,6 +80,9 @@ public abstract class ConfigurableRewriteMojo extends AbstractMojo {
   @Nullable
   private volatile Set<String> computedRecipeArtifactCoordinates;
 
+  @Nullable
+  private volatile Set<String> computedAdditionalResourceDirs;
+
   protected Set<String> getActiveRecipes() {
     if (computedRecipes == null) {
       synchronized (this) {
@@ -114,6 +121,18 @@ public abstract class ConfigurableRewriteMojo extends AbstractMojo {
     }
 
     return computedRecipeArtifactCoordinates;
+  }
+
+  protected Set<String> getAdditionalResourceDirs() {
+    if (computedAdditionalResourceDirs == null) {
+      synchronized (this) {
+        if (computedAdditionalResourceDirs == null) {
+          computedAdditionalResourceDirs = Collections.unmodifiableSet(toSet(additionalResourceDirs));
+        }
+      }
+    }
+
+    return computedAdditionalResourceDirs;
   }
 
   private Set<String> toSet(@Nullable String propertyValue) {
