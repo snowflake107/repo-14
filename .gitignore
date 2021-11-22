@@ -48,6 +48,13 @@ coverage.json
 .coverage_cache/
 .coverage_contracts/
 
+# tmp file after precompiled contracts generation
+predeployed/build
+predeployed/dist
+predeployed/src/ima_predeployed/artifacts
+*.egg-info
+venv
+
 # Typescript staff
 types/
 typechain/

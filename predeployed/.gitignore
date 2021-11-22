@@ -1,0 +1,6 @@
+__pycache__
+src/multisigwallet_predeployed/artifacts/*
+!src/multisigwallet_predeployed/artifacts/.keep
+test/venv
+version.txt
+*.egg-info/
