@@ -6,6 +6,7 @@ from .tools.test_solidity_project import TestSolidityProject
 
 class TestMultiSigWalletGenerator(TestSolidityProject):
     MULTISIG_OWNER_ADDRESS = '0xd200000000000000000000000000000000000000'
+    MAX_OWNER_COUNT = 50
 
     def get_multisig_abi(self):
         return self.get_abi('MultiSigWallet')
@@ -24,7 +25,7 @@ class TestMultiSigWalletGenerator(TestSolidityProject):
             assert w3.isConnected()
 
             multisig = w3.eth.contract(address=MULTISIGWALLET_ADDRESS, abi=self.get_multisig_abi())
-            assert multisig.functions.MAX_OWNER_COUNT().call() == MultiSigWalletGenerator.MAX_OWNER_COUNT
+            assert multisig.functions.MAX_OWNER_COUNT().call() == self.MAX_OWNER_COUNT
 
     def test_is_owner(self, tmpdir):
         genesis = self.prepare_genesis()
