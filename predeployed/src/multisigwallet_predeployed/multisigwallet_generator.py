@@ -2,7 +2,6 @@
 
 from os.path import dirname, join
 from typing import Dict
-from web3.auto import w3
 
 from predeployed_generator.contract_generator import ContractGenerator
 
@@ -39,8 +38,11 @@ class MultiSigWalletGenerator(ContractGenerator):
     def generate_storage(cls, **kwargs) -> Dict[str, str]:
         multisig_owner_address = kwargs['multisig_owner_address']
         storage: Dict[str, str] = {}
-        IS_OWNER_VALUE_SLOT = cls.calculate_mapping_value_slot(cls.IS_OWNER_SLOT, multisig_owner_address, 'address')
-        cls._write_uint256(storage, IS_OWNER_VALUE_SLOT, 1)
+        is_owner_value_slot = cls.calculate_mapping_value_slot(
+            cls.IS_OWNER_SLOT,
+            multisig_owner_address,
+            'address')
+        cls._write_uint256(storage, is_owner_value_slot, 1)
         cls._write_addresses_array(storage, cls.OWNERS_SLOT, [multisig_owner_address])
         cls._write_uint256(storage, cls.REQUIRED_SLOT, 1)
         return storage
