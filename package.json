@@ -11,7 +11,9 @@
         "cspell": "npx cspell \"**/*\"",
         "hooks": "git config core.hooksPath .githooks || true",
         "no-hooks": "git config core.hooksPath .git/hooks",
-        "fullcheck": "yarn cspell"
+        "fullcheck": "yarn cspell",
+        "prepare": "yarn compile && yarn hooks"
+
     },
     "devDependencies": {
         "@types/chai": "^4.2.22",
