@@ -11,9 +11,9 @@ class TestMultiSigWalletGenerator(TestSolidityProject):
         return self.get_abi('MultiSigWallet')
 
     def prepare_genesis(self):
-        multisig_wallet_generator = MultiSigWalletGenerator()
+        multisigwallet_generator = MultiSigWalletGenerator()
 
-        return self.generate_genesis(multisig_wallet_generator.generate_allocation(
+        return self.generate_genesis(multisigwallet_generator.generate_allocation(
             MULTISIGWALLET_ADDRESS,
             multisig_owner_address=self.MULTISIG_OWNER_ADDRESS))
 
