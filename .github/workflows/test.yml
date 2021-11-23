@@ -54,9 +54,6 @@ jobs:
     # - name: Test deploy
     #   run: ./scripts/test_deploy.sh
 
-    - name: Run tests
-      run: npx hardhat coverage
-
     - name: Install python building tools
       run: pip3 install -r predeployed/scripts/requirements.txt
 
