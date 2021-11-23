@@ -3,6 +3,7 @@
 set -e
 
 cd "$(dirname "$0")/.."
+pwd
 ./scripts/generate_package_version.py > version.txt
 ARTIFACTS_DIR="src/multisigwallet_predeployed/artifacts/"
 cp -v "../artifacts/contracts/MultiSigWallet.sol/MultiSigWallet.json" "$ARTIFACTS_DIR"
