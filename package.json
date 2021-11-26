@@ -11,7 +11,7 @@
         "cspell": "npx cspell \"**/*\"",
         "hooks": "git config core.hooksPath .githooks || true",
         "no-hooks": "git config core.hooksPath .git/hooks",
-        "fullcheck": "yarn cspell",
+        "fullcheck": "yarn cspell && mypy predeployed/src && pylint predeployed/src/multisigwallet_predeployed/",
         "prepare": "yarn compile && yarn hooks"
 
     },
