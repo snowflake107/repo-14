@@ -10,6 +10,8 @@ class MultiSigWalletGenerator(ContractGenerator):
     '''
 
     ARTIFACT_FILENAME = 'MultiSigWallet.json'
+    MAX_OWNER_COUNT = 50
+    ZERO_ADDRESS = '0x'+'0'*40
 
      # ---------- storage ----------
     # -------MultiSigWallet-------
@@ -36,13 +38,26 @@ class MultiSigWalletGenerator(ContractGenerator):
 
     @classmethod
     def generate_storage(cls, **kwargs) -> Dict[str, str]:
-        multisig_owner_address = kwargs['multisig_owner_address']
+        erector_addresses = kwargs['erector_addresses']
+        try:
+            required_confirmations = kwargs['required_confirmations']
+        except:
+            required_confirmations = 1
+        
+        if len(erector_addresses) > cls.MAX_OWNER_COUNT:
+            raise Exception("Number of erectors must not be more than 50")
+        if required_confirmations > len(erector_addresses):
+            raise Exception("Number of required confirmations must be less or equal than number of erectors")
+
         storage: Dict[str, str] = {}
-        is_owner_value_slot = cls.calculate_mapping_value_slot(
-            cls.IS_OWNER_SLOT,
-            multisig_owner_address,
-            'address')
-        cls._write_uint256(storage, is_owner_value_slot, 1)
-        cls._write_addresses_array(storage, cls.OWNERS_SLOT, [multisig_owner_address])
-        cls._write_uint256(storage, cls.REQUIRED_SLOT, 1)
+        for erector_address in erector_addresses:
+            if erector_address == cls.ZERO_ADDRESS:
+                raise Exception("Erector address must not be zero")
+            is_owner_value_slot = cls.calculate_mapping_value_slot(
+                cls.IS_OWNER_SLOT,
+                erector_address,
+                'address')
+            cls._write_uint256(storage, is_owner_value_slot, 1)
+        cls._write_addresses_array(storage, cls.OWNERS_SLOT, erector_addresses)
+        cls._write_uint256(storage, cls.REQUIRED_SLOT, required_confirmations)
         return storage
