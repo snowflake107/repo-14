@@ -38,11 +38,23 @@ class MultiSigWalletGenerator(ContractGenerator):
 
     @classmethod
     def generate_storage(cls, **kwargs) -> Dict[str, str]:
+
+        '''Generate smart contract storage.
+
+        Arguments:
+            - erector_addresses (list)
+
+        Optional arguments:
+            - required_confirmations (int)
+
+        Returns an object in format:
+        {
+            "0x00": "0x5",
+            "0x01": "0x13"
+        }
+        '''
         erector_addresses = kwargs['erector_addresses']
-        try:
-            required_confirmations = kwargs['required_confirmations']
-        except KeyError:
-            required_confirmations = 1
+        required_confirmations = kwargs.get('required_confirmations', 1)
 
         if len(erector_addresses) > cls.MAX_OWNER_COUNT:
             raise Exception('Number of erectors must not be more than 50')

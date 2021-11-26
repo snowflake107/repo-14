@@ -24,8 +24,7 @@ genesis = {
     'alloc': {
         **multisigwallet_generator.generate_allocation(
             contract_address=MULTISIGWALLET_ADDRESS,
-            erector_addresses=[ERECTOR_ADDRESS],
-            required_confirmations=None
+            erector_addresses=[ERECTOR_ADDRESS]
         )
     }
 }
