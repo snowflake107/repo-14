@@ -42,7 +42,7 @@ class MultiSigWalletGenerator(ContractGenerator):
         '''Generate smart contract storage.
 
         Arguments:
-            - erector_addresses (list)
+            - originator_addresses (list)
 
         Optional arguments:
             - required_confirmations (int)
@@ -53,24 +53,24 @@ class MultiSigWalletGenerator(ContractGenerator):
             "0x01": "0x13"
         }
         '''
-        erector_addresses = kwargs['erector_addresses']
+        originator_addresses = kwargs['originator_addresses']
         required_confirmations = kwargs.get('required_confirmations', 1)
 
-        if len(erector_addresses) > cls.MAX_OWNER_COUNT:
-            raise Exception('Number of erectors must not be more than 50')
-        if required_confirmations > len(erector_addresses):
+        if len(originator_addresses) > cls.MAX_OWNER_COUNT:
+            raise Exception('Number of originators must not be more than 50')
+        if required_confirmations > len(originator_addresses):
             raise Exception('Number of required confirmations must be less'
-                            'or equal than number of erectors')
+                            'or equal than number of originators')
 
         storage: Dict[str, str] = {}
-        for erector_address in erector_addresses:
-            if erector_address == cls.ZERO_ADDRESS:
-                raise Exception('Erector address must not be zero')
+        for originator_address in originator_addresses:
+            if originator_address == cls.ZERO_ADDRESS:
+                raise Exception('Originator address must not be zero')
             is_owner_value_slot = cls.calculate_mapping_value_slot(
                 cls.IS_OWNER_SLOT,
-                erector_address,
+                originator_address,
                 'address')
             cls._write_uint256(storage, is_owner_value_slot, 1)
-        cls._write_addresses_array(storage, cls.OWNERS_SLOT, erector_addresses)
+        cls._write_addresses_array(storage, cls.OWNERS_SLOT, originator_addresses)
         cls._write_uint256(storage, cls.REQUIRED_SLOT, required_confirmations)
         return storage
