@@ -1,6 +1,7 @@
 codecov
 ethersproject
 initializable
+mkdir
 mypy
 nomiclabs
 popen

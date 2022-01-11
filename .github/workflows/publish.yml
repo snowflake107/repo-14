@@ -81,6 +81,7 @@ jobs:
         VERSION: ${{ env.VERSION }}
       run: |
         pip install predeployed/dist/*.whl
+        mkdir data
         ./predeployed/scripts/generate_abi.py > data/multisigwallet-predeployed-$VERSION-abi.json
 
     - name: Create Release
