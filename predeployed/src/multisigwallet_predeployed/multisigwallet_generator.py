@@ -34,7 +34,7 @@ class MultiSigWalletGenerator(ContractGenerator):
         generator = MultiSigWalletGenerator.from_hardhat_artifact(
             join(dirname(__file__), 'artifacts', self.ARTIFACT_FILENAME),
             join(dirname(__file__), 'artifacts', self.META_FILENAME))
-        super().__init__(bytecode=generator.bytecode, abi=generator.abi)
+        super().__init__(bytecode=generator.bytecode, abi=generator.abi, meta=generator.meta)
 
     @classmethod
     def generate_storage(cls, **kwargs) -> Dict[str, str]:
