@@ -71,4 +71,8 @@ class TestMultiSigWalletGenerator(TestSolidityProject):
             assert multisig.functions.required().call() == 2
             assert multisig.functions.isOwner(self.ORIGINATOR_ADDRESS_0).call()
             assert multisig.functions.isOwner(self.ORIGINATOR_ADDRESS_1).call()
+
+    def test_meta_info(self):
+        meta = MultiSigWalletGenerator().get_meta()
+        assert meta['name'] == 'MultiSigWallet'
     
