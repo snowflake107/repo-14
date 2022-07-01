@@ -1,6 +1,6 @@
 {
     "name": "multisigwallet-predeployed",
-    "version": "0.0.1",
+    "version": "1.1.0",
     "description": "Predeployed smart contract that increases security by requiring multiple parties to agree on transactions before execution.",
     "repository": "git@github.com:skalenetwork/multisigwallet-predeployed.git",
     "author": "Vadim Yavorsky <vadim@skalelabs.com>",
