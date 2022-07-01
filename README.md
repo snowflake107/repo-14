@@ -1,4 +1,4 @@
-# MultiSigWallet Predeploy
+# MultiSigWallet Predeployed
 
 ## Description
 

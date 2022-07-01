@@ -10,6 +10,7 @@ class MultiSigWalletGenerator(ContractGenerator):
     '''
 
     ARTIFACT_FILENAME = 'MultiSigWallet.json'
+    META_FILENAME = 'MultiSigWallet.meta.json'
     MAX_OWNER_COUNT = 50
     ZERO_ADDRESS = '0x'+'0'*40
 
@@ -30,11 +31,10 @@ class MultiSigWalletGenerator(ContractGenerator):
     TRANSACTIONS_COUNT_SLOT = ContractGenerator.next_slot(REQUIRED_SLOT)
 
     def __init__(self):
-        generator = MultiSigWalletGenerator.from_hardhat_artifact(join(
-            dirname(__file__),
-            'artifacts',
-            self.ARTIFACT_FILENAME))
-        super().__init__(bytecode=generator.bytecode, abi=generator.abi)
+        generator = MultiSigWalletGenerator.from_hardhat_artifact(
+            join(dirname(__file__), 'artifacts', self.ARTIFACT_FILENAME),
+            join(dirname(__file__), 'artifacts', self.META_FILENAME))
+        super().__init__(bytecode=generator.bytecode, abi=generator.abi, meta=generator.meta)
 
     @classmethod
     def generate_storage(cls, **kwargs) -> Dict[str, str]:
