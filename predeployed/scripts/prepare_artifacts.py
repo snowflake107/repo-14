@@ -8,7 +8,7 @@ hardhat_contracts_path = normpath(join(dirname(__file__), '../../artifacts/contr
 
 def prepare():
     handler = ArtifactsHandler(hardhat_contracts_path, package_artifacts_path)
-    handler.prepare_artifacts('Marionette')
+    handler.prepare_artifacts('MultiSigWallet')
 
 
 if __name__ == '__main__':
