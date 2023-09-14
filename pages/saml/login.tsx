@@ -8,10 +8,15 @@ export default function Login() {
   const { id, audience, acsUrl, providerName, relayState } = router.query;
 
   const [state, setState] = useState({
-    username: 'jackson',
-    domain: 'example.com',
+    username: 'jackson.doe',
+    domain: 'immersivelabs.com',
     acsUrl: 'https://jackson-demo.boxyhq.com/api/oauth/saml',
     audience: 'https://saml.boxyhq.com',
+    uid: 'mock-10001',
+    firstName: 'Jackson',
+    lastName: 'Doe',
+    teams: '',
+    organisationId: ''
   });
 
   const acsUrlInp = useRef<HTMLInputElement>(null);
@@ -39,7 +44,7 @@ export default function Login() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const { username, domain } = state;
+    const { username, firstName, lastName, domain, uid, teams, organisationId } = state;
 
     const response = await fetch(`/api/saml/auth`, {
       method: 'POST',
@@ -48,7 +53,12 @@ export default function Login() {
       },
       body: JSON.stringify({
         email: `${username}@${domain}`,
+        uid,
+        firstName,
+        lastName,
         id,
+        teams,
+        organisationId,
         audience: audience || state.audience,
         acsUrl: acsUrl || state.acsUrl,
         providerName,
@@ -116,50 +126,138 @@ export default function Login() {
                       </div>
                     </div>
                   ) : null}
-                  <div className='form-control'>
-                    <label className='label'>
-                      <span className='label-text font-bold'>Email</span>
-                    </label>
-                    <input
-                      name='username'
-                      id='username'
-                      ref={emailInp}
-                      autoComplete='off'
-                      type='text'
-                      placeholder='jackson'
-                      value={state.username}
-                      onChange={handleChange}
-                      className='input input-bordered'
-                      title='Please provide a mock email address'
-                    />
+                  <div className='col-span-2'>
+                    <div className='form-control'>
+                      <label className='label'>
+                        <span className='label-text font-bold'>Email</span>
+                        <span className='label-text-alt'>urn:mace:dir:attribute-def:email</span>
+                      </label>
+                      <div className='grid grid-cols-2 gap-y-1 gap-x-5'>
+                        <input
+                          name='username'
+                          id='username'
+                          ref={emailInp}
+                          autoComplete='off'
+                          type='text'
+                          value={state.username}
+                          onChange={handleChange}
+                          className='input input-bordered'
+                          title='Please provide a mock email address'
+                        />
+                        <select
+                          name='domain'
+                          id='domain'
+                          className='select select-bordered'
+                          onChange={handleChange}
+                          value={state.domain}>
+                          <option value='immersivelabs.com'>@immersivelabs.com</option>
+                          <option value='immersivelabs.org'>@immersivelabs.org</option>
+                        </select>
+                      </div>
+                      <label className='label'>
+
+                      </label>
+                    </div>
                   </div>
-                  <div className='form-control'>
-                    <label className='label'>
-                      <span className='label-text font-bold'>Domain</span>
-                    </label>
-                    <select
-                      name='domain'
-                      id='domain'
-                      className='select select-bordered'
-                      onChange={handleChange}
-                      value={state.domain}>
-                      <option value='example.com'>@example.com</option>
-                      <option value='example.org'>@example.org</option>
-                    </select>
+                  <div className='col-span-2'>
+                    <div className='form-control'>
+                      <label className='label'>
+                        <span className='label-text font-bold'>First Name</span>
+                        <span className='label-text-alt'>urn:mace:dir:attribute-def:first-name</span>
+                      </label>
+                      <input
+                        name='firstName'
+                        id='firstName'
+                        ref={emailInp}
+                        autoComplete='off'
+                        type='text'
+                        value={state.firstName}
+                        onChange={handleChange}
+                        className='input input-bordered'
+                        title='Please provide a mock first name'
+                      />
+                    </div>
                   </div>
-                  <div className='form-control col-span-2'>
+                  <div className='col-span-2'>
+                    <div className='form-control'>
+                      <label className='label'>
+                        <span className='label-text font-bold'>Last Name</span>
+                        <span className='label-text-alt'>urn:mace:dir:attribute-def:last-name</span>
+                      </label>
+                      <input
+                        name='lastName'
+                        id='lastName'
+                        ref={emailInp}
+                        autoComplete='off'
+                        type='text'
+                        value={state.lastName}
+                        onChange={handleChange}
+                        className='input input-bordered'
+                        title='Please provide a mock last name'
+                      />
+                    </div>
+                  </div>
+                  <div className='col-span-2'>
+                    <div className='form-control'>
+                      <label className='label'>
+                        <span className='label-text font-bold'>Uid</span>
+                        <span className='label-text-alt'>urn:mace:dir:attribute-def:uid</span>
+                      </label>
+                      <input
+                        name='uid'
+                        id='uid'
+                        autoComplete='off'
+                        type='text'
+                        value={state.uid}
+                        onChange={handleChange}
+                        className='input input-bordered'
+                        title='Please provide a mock email address'
+                      />
+                      <label className='label'>
+                        <span className='label-text-alt'>Mandatory. Ex: <i>564255</i> or <i>jackson.doe@immersivelabs.com</i></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div className='col-span-2'>
+                    <div className='form-control'>
+                      <label className='label'>
+                        <span className='label-text font-bold'>Teams</span>
+                        <span className='label-text-alt'>urn:mace:dir:attribute-def:team-title</span>
+                      </label>
+                      <input
+                        name='teams'
+                        id='teams'
+                        autoComplete='off'
+                        type='text'
+                        value={state.teams}
+                        onChange={handleChange}
+                        className='input input-bordered'
+                        title='Please provide a list of teams'
+                      />
+                    </div>
                     <label className='label'>
-                      <span className='label-text font-bold'>Password</span>
+                      <span className='label-text-alt'>Optional. Ex: <i>customer_success,sales</i></span>
                     </label>
-                    <input
-                      id='password'
-                      autoComplete='off'
-                      type='password'
-                      defaultValue='samlstrongpassword'
-                      className='input input-bordered'
-                    />
+                  </div>
+                  <div className='col-span-2'>
+                    <div className='form-control'>
+                      <label className='label'>
+                        <span className='label-text font-bold'>Organisation ID</span>
+                        <span className='label-text-alt'>urn:mace:dir:attribute-def:organisation-id</span>
+                      </label>
+                      <input
+                        name='organisationId'
+                        id='organisationId'
+                        autoComplete='off'
+                        type='text'
+                        value={state.organisationId}
+                        onChange={handleChange}
+                        className='input input-bordered'
+                        title='Please provide an organisationId'
+                      />
+                    </div>
                     <label className='label'>
-                      <span className='label-text-alt'>Any password works</span>
+                      <span className='label-text-alt'>Optional. Ex: <i>immersive-labs</i></span>
                     </label>
                   </div>
                   <button className='btn btn-primary col-span-2 block'>Sign In</button>
@@ -170,7 +268,7 @@ export default function Login() {
               <div>
                 <span className='text-sm text-white'>
                   This is a simulated login screen, feel free to pick any username but you are restricted to
-                  two domains example.com and example.org. But this should allow you to test all combinations
+                  two domains immersivelabs.com and immersivelabs.org. But this should allow you to test all combinations
                   of your authentication and user modelling.
                 </span>
               </div>

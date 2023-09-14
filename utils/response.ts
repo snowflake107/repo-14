@@ -30,23 +30,32 @@ const createResponseXML = async (params: {
   const inResponseTo = samlReqId;
   // const responseId = crypto.randomBytes(10).toString('hex');
 
+  const teamsAttributeValue = user.teams.map((team_name) => (
+    {
+      '@xmlns:xs': 'http://www.w3.org/2001/XMLSchema',
+      '@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
+      '@xsi:type': 'xs:string',
+      '#text': team_name,
+    }
+  ))
+
   const attributeStatement = {
     '@xmlns:xs': 'http://www.w3.org/2001/XMLSchema',
     '@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
     'saml:Attribute': [
       {
-        '@Name': 'id',
-        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:basic',
+        '@Name': 'urn:mace:dir:attribute-def:uid',
+        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified',
         'saml:AttributeValue': {
           '@xmlns:xs': 'http://www.w3.org/2001/XMLSchema',
           '@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
           '@xsi:type': 'xs:string',
-          '#text': user.id,
+          '#text': user.uid,
         },
       },
       {
-        '@Name': 'email',
-        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:basic',
+        '@Name': 'urn:mace:dir:attribute-def:email',
+        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified',
         'saml:AttributeValue': {
           '@xmlns:xs': 'http://www.w3.org/2001/XMLSchema',
           '@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
@@ -55,8 +64,8 @@ const createResponseXML = async (params: {
         },
       },
       {
-        '@Name': 'firstName',
-        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:basic',
+        '@Name': 'urn:mace:dir:attribute-def:first-name',
+        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified',
         'saml:AttributeValue': {
           '@xmlns:xs': 'http://www.w3.org/2001/XMLSchema',
           '@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
@@ -65,13 +74,28 @@ const createResponseXML = async (params: {
         },
       },
       {
-        '@Name': 'lastName',
-        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:basic',
+        '@Name': 'urn:mace:dir:attribute-def:last-name',
+        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified',
         'saml:AttributeValue': {
           '@xmlns:xs': 'http://www.w3.org/2001/XMLSchema',
           '@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
           '@xsi:type': 'xs:string',
           '#text': user.lastName,
+        },
+      },
+      {
+        '@Name': 'urn:mace:dir:attribute-def:team-title',
+        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified',
+        'saml:AttributeValue': teamsAttributeValue,
+      },
+      {
+        '@Name': 'urn:mace:dir:attribute-def:organisation-id',
+        '@NameFormat': 'urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified',
+        'saml:AttributeValue': {
+          '@xmlns:xs': 'http://www.w3.org/2001/XMLSchema',
+          '@xmlns:xsi': 'http://www.w3.org/2001/XMLSchema-instance',
+          '@xsi:type': 'xs:string',
+          '#text': user.organisationId,
         },
       },
     ],
