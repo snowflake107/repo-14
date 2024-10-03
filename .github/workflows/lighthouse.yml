@@ -38,23 +38,15 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
         with:
           egress-policy: audit
 
       - name: Git Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
         with:
-          # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
-          # we want to clone the fork's repository instead of the base repository
-          # this allows us to have the correct history tree of the perspective of the Pull Request's branch
-          # If the Workflow is running on `merge_group` or `push` events it fallsback to the base repository
-          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
-          # We checkout the branch itself instead of a specific SHA (Commit) as we want to ensure that this Workflow
-          # is always running with the latest `ref` (changes) of the Pull Request's branch
-          # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
-          # or the merge_group `ref`
-          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          # Provides the Pull Request commit SHA or the GitHub merge group ref
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
 
       - name: Add Comment to PR
         # Signal that a lighthouse run is about to start
@@ -66,7 +58,7 @@ jobs:
           comment_tag: 'lighthouse_audit'
 
       - name: Capture Vercel Preview
-        uses: patrickedqvist/wait-for-vercel-preview@dca4940010f36d2d44caa487087a09b57939b24a # v1.3.1
+        uses: patrickedqvist/wait-for-vercel-preview@06c79330064b0e6ef7a2574603b62d3c98789125 # v1.3.2
         id: vercel_preview_url
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -106,7 +98,7 @@ jobs:
           # Run as a separate file so we do not have to inline all of our formatting logic.
           # See https://github.com/actions/github-script#run-a-separate-file for more info.
           script: |
-            const { formatLighthouseResults } = await import('${{github.workspace}}/scripts/lighthouse/index.mjs')
+            const { formatLighthouseResults } = await import('${{github.workspace}}/apps/site/scripts/lighthouse/index.mjs')
             await formatLighthouseResults({core})
 
       - name: Add Comment to PR

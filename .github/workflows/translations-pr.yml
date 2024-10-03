@@ -8,22 +8,22 @@ on:
     branches:
       - main
     paths:
-      - 'pages/**/*.md'
-      - 'pages/**/*.mdx'
-      - '!pages/en/**/*.md'
-      - '!pages/en/**/*.mdx'
-      - 'i18n/locales/*.json'
-      - '!i18n/locales/en.json'
+      - 'apps/site/pages/**/*.md'
+      - 'apps/site/pages/**/*.mdx'
+      - '!apps/site/pages/en/**/*.md'
+      - '!apps/site/pages/en/**/*.mdx'
+      - 'packages/i18n/locales/*.json'
+      - '!packages/i18n/locales/en.json'
 
 permissions:
   actions: read
 
 jobs:
   comment_on_translation_pr:
-    # This comment should only be posted on PRs that come from users and not from Crowdin
+    # This comment should always be posted on forks, or from internal PRs not originating from Crowdin (which are direct branches)
     if: |
-      github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' &&
-      github.event.pull_request.head.ref != 'chore/crowdin'
+      (github.event.pull_request.head.repo.full_name != 'nodejs/nodejs.org') ||
+      (github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' && github.event.pull_request.head.ref != 'chore/crowdin')
 
     name: Comment on Translation PR
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
         with:
           egress-policy: audit
 
@@ -65,24 +65,22 @@ jobs:
 
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        uses: step-security/harden-runner@91182cccc01eb5e619899d80e4e971d6181294a7 # v2.10.1
         with:
           egress-policy: audit
 
       - name: Git Checkout
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938 # v4.2.0
         with:
-          # By default Git Checkout on `pull-request-target` will checkout
-          # the `default` branch of the Pull Request. We want to checkout
-          # the actual branch of the Pull Request.
-          ref: ${{ github.event.pull_request.head.ref }}
+          # Provides the Pull Request commit SHA or the GitHub merge group ref
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || github.ref }}
 
       - name: Restore Lint Cache
-        uses: actions/cache/restore@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
+        uses: actions/cache/restore@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: |
-            .eslintmdcache
-            .prettiercache
+            apps/site/.eslintmdcache
+            apps/site/.prettiercache
           # We want to restore Turborepo Cache and ESlint and Prettier Cache
           # The ESLint and Prettier cache's are useful to reduce the overall runtime of ESLint and Prettier
           # as they will only run on files that have changed since the last cached run
@@ -94,7 +92,7 @@ jobs:
             cache-lint-
 
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
         with:
           # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
@@ -108,23 +106,23 @@ jobs:
       - name: Run `npx lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx eslint "pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=.eslintmdcache
+        run: npx eslint "apps/site/pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=apps/site/.eslintmdcache --config=apps/site/eslint.config.js
 
       - name: Run `npx prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing
         # This avoid that unrelated changes get prettied/modified within this PR
-        run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=.prettiercache
+        run: npx prettier "apps/site/{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=apps/site/.prettiercache
 
       - name: Push Changes back to Pull Request
-        uses: stefanzweifel/git-auto-commit-action@8756aa072ef5b4a080af5dc8fef36c5d586e521d # v5.0.0
+        uses: stefanzweifel/git-auto-commit-action@8621497c8c39c72f3e2a999a26b4ca1b5058a842 # v5.0.1
         with:
           commit_options: '--no-verify --signoff'
           commit_message: 'chore: automated format of translated files'
 
       - name: Save Lint Cache
-        uses: actions/cache/save@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
+        uses: actions/cache/save@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: |
-            .eslintmdcache
-            .prettiercache
-          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.eslintmdcache') }}
+            apps/site/.eslintmdcache
+            apps/site/.prettiercache
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('apps/site/.eslintmdcache') }}
