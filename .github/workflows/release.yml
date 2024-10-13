@@ -251,7 +251,7 @@ jobs:
         fetch-depth: 0
     - continue-on-error: true
       name: Set Node env
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: 18
     - continue-on-error: true
