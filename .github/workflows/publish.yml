@@ -250,7 +250,7 @@ jobs:
         fetch-depth: 0
     - continue-on-error: true
       name: set-up-jdk
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v4
       with:
         distribution: adopt
         gpg-passphrase: SONATYPE_SIGNING_PASSWORD
