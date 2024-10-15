@@ -15,13 +15,13 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/ishidawataru/sctp v0.0.0-20230406120618-7ff4192f6ff2
 	github.com/lib/pq v1.10.9
-	github.com/miekg/dns v1.1.59
+	github.com/miekg/dns v1.1.62
 	github.com/prometheus-community/pro-bing v0.4.0
 	github.com/prometheus/client_golang v1.19.1
 	github.com/valyala/fasthttp v1.54.0
 	github.com/wcharczuk/go-chart/v2 v2.1.1
-	golang.org/x/crypto v0.24.0
-	golang.org/x/net v0.26.0
+	golang.org/x/crypto v0.25.0
+	golang.org/x/net v0.27.0
 	golang.org/x/oauth2 v0.21.0
 	google.golang.org/api v0.183.0
 	gopkg.in/mail.v2 v2.3.1
@@ -73,7 +73,7 @@ require (
 	golang.org/x/image v0.17.0 // indirect
 	golang.org/x/mod v0.18.0 // indirect
 	golang.org/x/sync v0.7.0 // indirect
-	golang.org/x/sys v0.21.0 // indirect
+	golang.org/x/sys v0.22.0 // indirect
 	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/tools v0.22.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240604185151-ef581f913117 // indirect
