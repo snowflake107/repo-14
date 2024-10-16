@@ -254,7 +254,7 @@ jobs:
         elixir-version: ${{matrix.elixir_version}}
         otp-version: ${{matrix.otp_version}}
     - continue-on-error: true
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         key: deps-${{ runner.os }}-${{ matrix.otp_version }}-${{ matrix.elixir_version
           }}-${{ hashFiles('**/mix.lock') }}
