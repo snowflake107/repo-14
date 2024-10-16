@@ -27,7 +27,7 @@
         "@skalenetwork/upgrade-tools": "^1.0.0",
         "axios": "^0.21.4",
         "cspell": "^5.20.0",
-        "dotenv": "^10.0.0",
+        "dotenv": "^16.4.5",
         "eslint": "^8.15.0",
         "ethers": "^5.4.7",
         "ethers-eip712": "^0.2.0",
