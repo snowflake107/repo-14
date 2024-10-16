@@ -1,6 +1,6 @@
 daal4py==2024.7.0
 matplotlib==3.9.2
-numpy==1.26.4
+numpy==2.1.2
 scikit-learn-intelex==2024.7.0
 threadpoolctl==3.5.0
 xgboost==2.1.1
