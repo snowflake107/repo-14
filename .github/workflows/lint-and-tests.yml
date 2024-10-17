@@ -869,7 +869,7 @@ jobs:
     - continue-on-error: true
       if: steps.chromatic-deploy.outcome == 'success'
       name: Jest Coverage Comment
-      uses: MishaKav/jest-coverage-comment@434e6d2d37116d23d812809b61d499639842fa3b
+      uses: MishaKav/jest-coverage-comment@d74238813c33e6ea20530ff91b5ea37953d11c91
       with:
         coverage-summary-path: ./apps/site/coverage/coverage-summary.json
         junitxml-path: ./apps/site/junit.xml
