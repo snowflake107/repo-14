@@ -7,7 +7,7 @@ require (
 	4d63.com/gochecknoglobals v0.2.1
 	github.com/4meepo/tagalign v1.3.4
 	github.com/Abirdcfly/dupword v0.0.14
-	github.com/Antonboom/errname v0.1.13
+	github.com/Antonboom/errname v1.0.0
 	github.com/Antonboom/nilnil v0.1.9
 	github.com/Antonboom/testifylint v1.4.3
 	github.com/BurntSushi/toml v1.4.1-0.20240526193622-a339e1f7089c
@@ -125,7 +125,7 @@ require (
 	go-simpler.org/sloglint v0.7.2
 	go.uber.org/automaxprocs v1.5.3
 	golang.org/x/exp v0.0.0-20240103183307-be819d1f06fc
-	golang.org/x/tools v0.24.0
+	golang.org/x/tools v0.26.0
 	gopkg.in/yaml.v3 v3.0.1
 	honnef.co/go/tools v0.5.1
 	mvdan.cc/gofumpt v0.7.0
@@ -189,9 +189,9 @@ require (
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.24.0 // indirect
 	golang.org/x/exp/typeparams v0.0.0-20240314144324-c7f7c6466f7f // indirect
-	golang.org/x/mod v0.20.0 // indirect
+	golang.org/x/mod v0.21.0 // indirect
 	golang.org/x/sync v0.8.0 // indirect
-	golang.org/x/sys v0.23.0 // indirect
+	golang.org/x/sys v0.26.0 // indirect
 	golang.org/x/text v0.15.0 // indirect
 	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
