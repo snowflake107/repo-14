@@ -261,7 +261,7 @@ jobs:
           || github.ref }}
     - continue-on-error: true
       name: Add Comment to PR
-      uses: thollander/actions-comment-pull-request@fabd468d3a1a0b97feee5f6b9e499eab0dd903f6
+      uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9
       with:
         comment_tag: lighthouse_audit
         message: 'Running Lighthouse audit...
@@ -310,7 +310,7 @@ jobs:
           '
     - continue-on-error: true
       name: Add Comment to PR
-      uses: thollander/actions-comment-pull-request@fabd468d3a1a0b97feee5f6b9e499eab0dd903f6
+      uses: thollander/actions-comment-pull-request@e2c37e53a7d2227b61585343765f73a9ca57eda9
       with:
         comment_tag: lighthouse_audit
         message: '${{ steps.format_lighthouse_score.outputs.comment }}
